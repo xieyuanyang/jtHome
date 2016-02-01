@@ -1,0 +1,61 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    <!--通用大小-->
+    <dimen name="font_small">12.0sp</dimen>
+    <dimen name="font_normal">15.0sp</dimen>
+    <dimen name="icon_width">20dp</dimen>
+    <dimen name="icon_height">20dp</dimen>
+    <dimen name="icon_width_big">25dp</dimen>
+    <dimen name="icon_height_big">25dp</dimen>
+    <dimen name="icon_margin_left">15dp</dimen>
+    <dimen name="icon_margin_right">15dp</dimen>
+    <dimen name="margin_left">15dp</dimen>
+    <dimen name="margin_right">15dp</dimen>
+    <dimen name="toolbar_height">46dp</dimen>
+    <dimen name="slidingmenu">60dp</dimen>
+    <dimen name="title">18.0sp</dimen>
+    <dimen name="input_height">48dp</dimen>
+    <dimen name="fifty">50dp</dimen>
+
+
+    <!--主界面底部tab-->
+    <dimen name="bottom_tab_padding_drawable">2.0dip</dimen>
+    <dimen name="bottom_tab_padding_up">6.0dip</dimen>
+    <dimen name="bottom_tab_font_size">12.0sp</dimen>
+
+    <!--动态页tab高度-->
+    <dimen name="dynamic_tab_height">30.0dp</dimen>
+
+    <!--圈子界面-->
+    <dimen name="top_rect_corner_width">200.0dp</dimen>
+    <dimen name="top_rect_corner_height">35.0dp</dimen>
+
+    <!--关注界面-->
+    <dimen name="item_height">260.0dp</dimen>
+    <dimen name="item_margin_left">10.0dp</dimen>
+    <dimen name="item_margin_top">5.0dp</dimen>
+    <dimen name="item_small_pic_height">110dp</dimen>
+    <dimen name="item_small_icon_width">20dp</dimen>
+    <dimen name="item_small_icon_height">20dp</dimen>
+
+    <!--热点页面-->
+    <dimen name="small_item_height">60dp</dimen>
+
+    <!--弹出输入框-->
+    <dimen name="one">1dip</dimen>
+    <dimen name="two">2dip</dimen>
+    <dimen name="four">4dip</dimen>
+    <dimen name="eight">8dip</dimen>
+    <dimen name="ten">10dip</dimen>
+    <dimen name="five">5dip</dimen>
+    <dimen name="three">3dip</dimen>
+    <dimen name="fivety">50dip</dimen>
+    <dimen name="fourty">40dip</dimen>
+    <dimen name="fifteen">15dip</dimen>
+    <dimen name="zero">0dip</dimen>
+</resources>

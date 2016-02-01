@@ -1,0 +1,215 @@
+package com.shendu.jthome.view.fragment;
+
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.shendu.jthome.R;
+import com.shendu.jthome.adapter.CircleTabPagerAdapter;
+import com.shendu.jthome.base.BaseFragment;
+import com.shendu.jthome.view.activity.MainActivity;
+import com.shendu.jthome.view.myview.ShowViewPager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * 圈子
+ */
+public class CircleFragment extends BaseFragment {
+
+
+    private LinearLayout left_ll;
+    private ShowViewPager viewpager;
+    private CircleTabPagerAdapter tabPagerAdapter;
+    private List<Fragment> list;
+    private LinearLayout hot_ll, latest_ll, topic_ll;
+    private TextView hot_tv, latest_tv, topic_tv;
+    private FrameLayout hot_fl, latest_fl, topic_fl;
+    float x_tmp1 = 0;
+    float y_tmp1 = 0;
+
+    @Override
+    public View initView(LayoutInflater inflater) {
+        view = inflater.inflate(R.layout.fragment_circle, null);
+
+        left_ll = (LinearLayout) view.findViewById(R.id.left_ll);
+        left_ll.setOnClickListener(this);
+
+        //toolbar顶部滑动tab
+        hot_fl = (FrameLayout) view.findViewById(R.id.hot_fl);
+        latest_fl = (FrameLayout) view.findViewById(R.id.latest_fl);
+        topic_fl = (FrameLayout) view.findViewById(R.id.topic_fl);
+        hot_ll = (LinearLayout) view.findViewById(R.id.hot_ll);
+        latest_ll = (LinearLayout) view.findViewById(R.id.latest_ll);
+        topic_ll = (LinearLayout) view.findViewById(R.id.topic_ll);
+        hot_tv = (TextView) view.findViewById(R.id.hot_tv);
+        latest_tv = (TextView) view.findViewById(R.id.latest_tv);
+        topic_tv = (TextView) view.findViewById(R.id.topic_tv);
+        hot_fl.setOnClickListener(this);
+        latest_fl.setOnClickListener(this);
+        topic_fl.setOnClickListener(this);
+
+
+        viewpager = (ShowViewPager) view.findViewById(R.id.tab_vp);
+        tabPagerAdapter = new CircleTabPagerAdapter(getChildFragmentManager(), list);
+        viewpager.setAdapter(tabPagerAdapter);
+        //解决viewpager与slidingmenu的冲突
+        viewpager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+
+//                x_tmp1 = 0;
+//                y_tmp1 = 0;
+                if (MainActivity.mLeftMenu.isOpen) {
+                    viewpager.getParent().requestDisallowInterceptTouchEvent(false);
+                } else {
+                    viewpager.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+
+                //获取当前坐标
+                float x = event.getX();
+                float y = event.getY();
+
+                float x_tmp2;
+
+
+                switch (event.getAction()) {
+
+                    case MotionEvent.ACTION_DOWN:
+                        x_tmp1 = x;
+                        y_tmp1 = y;
+
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        x_tmp2 = x;
+                        if (x_tmp1 != 0 && y_tmp1 != 0) {
+                            if (x_tmp1 - x_tmp2 > 8) {
+                                MainActivity.mLeftMenu.closeMenu();
+                            }
+                            if (x_tmp2 - x_tmp1 > 8) {
+                                if (viewpager.getCurrentItem() == 0) {
+                                    MainActivity.mLeftMenu.openMenu();
+                                } else {
+                                    MainActivity.mLeftMenu.closeMenu();
+                                }
+                            }
+                        }
+                        break;
+                }
+
+                return false;
+            }
+        });
+
+        //页面切换,改变顶部状态
+        viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                switch (position) {
+                    case 0:
+                        choosePager(0);
+                        break;
+                    case 1:
+                        choosePager(1);
+                        break;
+                    case 2:
+                        choosePager(2);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        return view;
+    }
+
+    @Override
+    public void initData(Bundle savedInstanceState) {
+
+        list = new ArrayList<Fragment>();
+        list.add(new HotDoorFragment());
+        list.add(new LatestFragment());
+        list.add(new TopicFragment());
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+            case R.id.left_ll:
+                break;
+            case R.id.hot_fl:
+                viewpager.setCurrentItem(0);
+                choosePager(0);
+                break;
+            case R.id.latest_fl:
+                viewpager.setCurrentItem(1);
+                choosePager(1);
+                break;
+            case R.id.topic_fl:
+                viewpager.setCurrentItem(2);
+                choosePager(2);
+                break;
+        }
+    }
+
+    /**
+     * 不同页面不同状态
+     *
+     * @param position
+     */
+    private void choosePager(int position) {
+
+        switch (position) {
+            case 0:
+                hot_ll.setVisibility(View.VISIBLE);
+                latest_ll.setVisibility(View.GONE);
+                topic_ll.setVisibility(View.GONE);
+                hot_tv.setTextColor(getResources().getColor(R.color.white));
+                latest_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                topic_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                break;
+            case 1:
+                viewpager.setCurrentItem(1);
+                hot_ll.setVisibility(View.GONE);
+                latest_ll.setVisibility(View.VISIBLE);
+                topic_ll.setVisibility(View.GONE);
+                hot_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                latest_tv.setTextColor(getResources().getColor(R.color.white));
+                topic_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                break;
+            case 2:
+                hot_ll.setVisibility(View.GONE);
+                latest_ll.setVisibility(View.GONE);
+                topic_ll.setVisibility(View.VISIBLE);
+                hot_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                latest_tv.setTextColor(getResources().getColor(R.color.top_tab_press));
+                topic_tv.setTextColor(getResources().getColor(R.color.white));
+                break;
+        }
+
+    }
+}

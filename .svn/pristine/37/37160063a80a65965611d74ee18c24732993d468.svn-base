@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_chat_normal.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_chat_normal.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_circle_normal.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_circle_normal.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\head.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\head.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_dynamic_press.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_dynamic_press.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_dynamic_normal.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_dynamic_normal.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\search.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\search.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_find_normal.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_find_normal.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_chat_press.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_chat_press.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_find_press.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_find_press.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_circle_press.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_circle_press.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_community_press.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_community_press.png"
+    },
+    {
+        "merged": "E:\\studioworkspce\\JtHome\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon_community_normal.png",
+        "source": "E:\\studioworkspce\\JtHome\\app\\src\\main\\res\\mipmap-xhdpi\\icon_community_normal.png"
+    }
+]

@@ -1,0 +1,160 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/appMainColor</item>
+        <item name="colorPrimaryDark">@color/appMainColor</item>
+        <item name="colorAccent">@color/appMainColor</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
+        #这句话是关键，状态栏透明
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="baseToolBar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/appMainColor</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="colorPrimaryDark">@color/appMainColor</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
+        <!-- 设置该属性解决空白部分-->
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- 公用style -->
+    <style name="parentstyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--正常未设置颜色字体-->
+    <style name="font_normal" parent="@style/parentstyle">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--白色大标题-->
+    <style name="font_big_title" parent="@style/parentstyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--小号未设置颜色字体-->
+    <style name="font_small" parent="@style/parentstyle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--正常白色字体-->
+    <style name="font_white" parent="@style/parentstyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--小号白色字体-->
+    <style name="font_white_small" parent="@style/parentstyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--正常黑色字体-->
+    <style name="font_black" parent="@style/parentstyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black_middle</item>
+    </style>
+
+    <!--小号黑色字体-->
+    <style name="font_black_small" parent="@style/parentstyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_middle</item>
+    </style>
+
+    <!--正常灰色字体-->
+    <style name="font_gray" parent="@style/parentstyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <!--小号灰色字体-->
+    <style name="font_gray_small" parent="@style/parentstyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <!--小号绿色字体-->
+    <style name="font_green_small" parent="@style/parentstyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/appMainColor</item>
+    </style>
+
+    <style name="weight_all">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <!--分割线-->
+    <style name="viewone">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#d9d9d9</item>
+    </style>
+
+    <!--首页底部tab-->
+    <style name="main_tab_bottom">
+        <item name="android:textSize">@dimen/bottom_tab_font_size</item>
+        <item name="android:textColor">@drawable/tab_text_color_selecter</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingTop">@dimen/bottom_tab_padding_up</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawablePadding">@dimen/bottom_tab_padding_drawable</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+
+    <!--动态页面tab-->
+    <style name="DynamicTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/appMainColor</item>
+        <item name="android:height">@dimen/dynamic_tab_height</item>
+        <item name="android:textColor">@color/black_middle</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <!--icon统一标准-->
+
+    <style name="icon_style">
+        <item name="android:layout_width">@dimen/icon_width</item>
+        <item name="android:layout_height">@dimen/icon_height</item>
+        <item name="android:layout_marginLeft">@dimen/icon_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/icon_margin_right</item>
+    </style>
+
+    <style name="icon_big_style">
+        <item name="android:layout_width">@dimen/icon_width_big</item>
+        <item name="android:layout_height">@dimen/icon_height_big</item>
+        <item name="android:layout_marginLeft">@dimen/icon_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/icon_margin_right</item>
+    </style>
+
+
+</resources>

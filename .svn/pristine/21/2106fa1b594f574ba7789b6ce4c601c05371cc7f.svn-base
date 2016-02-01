@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a0000000"
+    android:descendantFocusability="afterDescendants"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/mEditMessageEt"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="left|top"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_corner_edittext"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_to_face"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/icon_jw_msg_add_face_btn_nor" />
+
+            <View
+                style="@style/weight_all"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="发送"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/add_tool"
+            layout="@layout/send_msg_tool"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

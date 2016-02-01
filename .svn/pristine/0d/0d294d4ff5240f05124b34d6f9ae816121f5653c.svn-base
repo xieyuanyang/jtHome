@@ -1,0 +1,161 @@
+package com.shendu.jthome.view.fragment;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+
+import com.shendu.jthome.R;
+import com.shendu.jthome.adapter.StaggeredRecycleViewAdapter;
+import com.shendu.jthome.base.BaseFragment;
+import com.shendu.jthome.view.activity.MainActivity;
+import com.shendu.jthome.view.myview.recyclerview.PullLoadMoreRecyclerView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+/**
+ * 热门
+ */
+public class HotDoorFragment extends BaseFragment implements PullLoadMoreRecyclerView.PullLoadMoreListener {
+
+    private PullLoadMoreRecyclerView mPullLoadMoreRecyclerView;
+    private int mCount = 1;
+    private StaggeredRecycleViewAdapter mRecyclerViewAdapter;
+    float x_tmp1 = 0;
+    float y_tmp1 = 0;
+
+    @Override
+    public View initView(LayoutInflater inflater) {
+
+        view = inflater.inflate(R.layout.fragment_hot_door, null);
+
+        mPullLoadMoreRecyclerView = (PullLoadMoreRecyclerView) view.findViewById(R.id.pullLoadMoreRecyclerView);
+        mPullLoadMoreRecyclerView.setRefreshing(true);
+        new DataAsyncTask().execute();
+
+        mPullLoadMoreRecyclerView.setStaggeredGridLayout(2);
+        mPullLoadMoreRecyclerView.setOnPullLoadMoreListener(this);
+
+        mRecyclerViewAdapter = new StaggeredRecycleViewAdapter(getActivity());
+        mPullLoadMoreRecyclerView.setAdapter(mRecyclerViewAdapter);
+        mPullLoadMoreRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+                                                         @Override
+                                                         public boolean onTouch(View view, MotionEvent event) {
+
+
+                                                             Log.e("xyy", "哈哈哈哈哈");
+                                                             //获取当前坐标
+                                                             float x = event.getX();
+                                                             float y = event.getY();
+
+                                                             float x_tmp2;
+
+
+                                                             switch (event.getAction()) {
+
+                                                                 case MotionEvent.ACTION_DOWN:
+                                                                     x_tmp1 = x;
+                                                                     y_tmp1 = y;
+
+                                                                     break;
+
+                                                                 case MotionEvent.ACTION_UP:
+                                                                     x_tmp2 = x;
+                                                                     Log.e("xyy", "x_tmp1=" + x_tmp1);
+                                                                     if (x_tmp1 != 0 && y_tmp1 != 0) {
+                                                                         if (x_tmp1 - x_tmp2 > 8) {
+                                                                             Log.e("xyy", "向右滑动");
+                                                                         }
+                                                                         if (x_tmp2 - x_tmp1 > 8) {
+                                                                             MainActivity.mLeftMenu.openMenu();
+                                                                         } else {
+                                                                         }
+                                                                         Log.e("xyy", "向左滑动");
+                                                                     }
+//                }
+                                                                     break;
+                                                             }
+
+
+                                                             return true;
+                                                         }
+                                                     }
+
+        );
+
+        return view;
+    }
+
+
+    private List<Map<String, String>> setList() {
+        List<Map<String, String>> dataList = new ArrayList<>();
+        int start = 20 * (mCount - 1);
+        Map<String, String> map;
+        for (int i = start; i < 20 * mCount; i++) {
+            map = new HashMap<>();
+            map.put("text", "Third" + i);
+            map.put("height", (100 + 2 * i) + "");
+            dataList.add(map);
+        }
+        return dataList;
+
+    }
+
+    class DataAsyncTask extends AsyncTask<Void, Void, List<Map<String, String>>> {
+        @Override
+        protected List<Map<String, String>> doInBackground(Void... params) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return setList();
+        }
+
+        @Override
+        protected void onPostExecute(List<Map<String, String>> strings) {
+            super.onPostExecute(strings);
+            if (mRecyclerViewAdapter == null) {
+                mRecyclerViewAdapter = new StaggeredRecycleViewAdapter(getActivity());
+                mPullLoadMoreRecyclerView.setAdapter(mRecyclerViewAdapter);
+            } else {
+//                mRecyclerViewAdapter.getDataList().addAll(strings);
+                mRecyclerViewAdapter.notifyDataSetChanged();
+            }
+            mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
+        }
+
+    }
+
+
+    @Override
+    public void initData(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
+    public void onRefresh() throws InterruptedException {
+
+        new DataAsyncTask().execute();
+
+
+    }
+
+    @Override
+    public void onLoadMore() throws InterruptedException {
+
+        new DataAsyncTask().execute();
+
+    }
+}

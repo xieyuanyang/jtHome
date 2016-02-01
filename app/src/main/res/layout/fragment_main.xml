@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppBaseTheme"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <!--<include layout="@layout/toolbar_main_fragment" />-->
+
+
+    <com.shendu.jthome.view.myview.viewpager.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:background="@color/white" />
+
+    <View style="@style/viewone" />
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="2dp">
+
+        <RadioButton
+            android:id="@+id/radio_dynamic"
+            style="@style/main_tab_bottom"
+            android:checked="true"
+            android:drawableTop="@drawable/icon_dynamic"
+            android:text="@string/tab_dynamic" />
+
+        <RadioButton
+            android:id="@+id/radio_community"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_community"
+            android:text="@string/tab_community" />
+
+        <RadioButton
+            android:id="@+id/radio_circle"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_circle"
+            android:text="@string/tab_circle" />
+
+        <RadioButton
+            android:id="@+id/radio_chat"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_chat"
+            android:text="@string/tab_chat" />
+
+        <RadioButton
+            android:id="@+id/radio_find"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_find"
+            android:text="@string/tab_find" />
+    </RadioGroup>
+
+</LinearLayout>

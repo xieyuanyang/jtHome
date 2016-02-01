@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_light"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:text="24小时"
+        android:textColor="@color/yellow_gray" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray_middle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/translucent"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="这是测试文字"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout style="@style/small_item">
+
+        <TextView
+            style="@style/font_black"
+            android:text="哈哈哈" />
+
+        <View
+            style="@style/weight_all"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/gray_middle" />
+    </LinearLayout>
+
+    <View style="@style/viewone" />
+
+    <LinearLayout style="@style/small_item">
+
+        <TextView
+            style="@style/font_black"
+            android:text="哈哈哈" />
+
+        <View
+            style="@style/weight_all"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/gray_middle" />
+    </LinearLayout>
+
+    <View style="@style/viewone" />
+
+    <LinearLayout style="@style/small_item">
+
+        <TextView
+            style="@style/font_black"
+            android:text="哈哈哈" />
+
+        <View
+            style="@style/weight_all"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/gray_middle" />
+    </LinearLayout>
+
+    <View style="@style/viewone" />
+
+    <LinearLayout style="@style/small_item">
+
+        <TextView
+            style="@style/font_black"
+            android:text="哈哈哈" />
+
+        <View
+            style="@style/weight_all"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/gray_middle" />
+    </LinearLayout>
+
+    <View style="@style/viewone" />
+
+</LinearLayout>
+
+
+
